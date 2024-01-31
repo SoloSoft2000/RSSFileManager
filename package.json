@@ -4,8 +4,8 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "start": "node index.js",
-    "start:user": "node index.js --username=Eugene"
+    "start": "node index.mjs",
+    "start:user": "node index.mjs --username=Eugene"
   },
   "keywords": [],
   "author": "",
