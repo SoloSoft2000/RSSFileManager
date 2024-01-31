@@ -1,9 +1,11 @@
 import readline from 'readline';
+import os from 'os';
 import { getArgValue, parseCommand} from './utils/ParseFuncs.mjs';
 import executeCommand from './utils/executeCommand.mjs';
-import { getCurrentPath } from './utils/directory.mjs';
+import { changePath, getCurrentPath } from './utils/directory.mjs';
 
 const userName = getArgValue(process.argv.slice(2), 'username') || 'Anonymus';
+changePath(os.homedir());
 
 console.log(`Welcome to the File Manager, ${userName}!`);
 console.log(`You are currently in ${getCurrentPath()}`);

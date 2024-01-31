@@ -1,12 +1,8 @@
-import os from 'os';
-
-let currentPath = os.homedir();
-
 const getCurrentPath = () => {
-  return currentPath;
+  return process.cwd();
 }
 
 const changePath = (newPath) => {
-  currentPath = newPath;
+  process.chdir(newPath);
 }
 export { getCurrentPath, changePath };
