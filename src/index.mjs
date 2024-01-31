@@ -1,8 +1,8 @@
 import readline from 'readline';
 import os from 'os';
-import { getArgValue, parseCommand} from './utils/ParseFuncs.mjs';
-import executeCommand from './utils/executeCommand.mjs';
-import { changePath, getCurrentPath } from './utils/directory.mjs';
+import { getArgValue, parseCommand} from './helpers/ParseFuncs.mjs';
+import executeCommand from './helpers/executeCommand.mjs';
+import { changePath, getCurrentPath } from './handlers/directory.mjs';
 
 const userName = getArgValue(process.argv.slice(2), 'username') || 'Anonymus';
 changePath(os.homedir());

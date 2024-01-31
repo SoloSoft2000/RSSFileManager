@@ -1,4 +1,4 @@
-import { changePath } from "./directory.mjs";
+import { changePath } from "../handlers/directory.mjs";
 const commandList = [
   {
     command: 'ls',
