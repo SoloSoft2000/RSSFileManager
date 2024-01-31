@@ -1,45 +1,46 @@
 import { changePath } from "../handlers/directory.mjs";
+import { list } from "../handlers/list.mjs";
 const commandList = [
   {
     command: 'ls',
     expectedParams: 0,
     handlerFunction: () => {
-      console.log('list directory')
+      list();
     }
   },
   {
     command: 'up',
     expectedParams: 0,
     handlerFunction: () => {
-      changePath('..')
+      changePath('..');
     }
   },
   {
     command: 'cd',
     expectedParams: 1,
     handlerFunction: (params) => {
-      changePath(params[0])
+      changePath(params[0]);
     }
   },
   {
     command: 'cat',
     expectedParams: 1,
     handlerFunction: (params) => {
-      console.log(`read file ${params[0]}`)
+      console.log(`read file ${params[0]}`);
     }
   },
   {
     command: 'add',
     expectedParams: 1,
     handlerFunction: (params) => {
-      console.log(`create file ${params[0]}`)
+      console.log(`create file ${params[0]}`);
     }
   },
   {
     command: 'rn',
     expectedParams: 2,
     handlerFunction: (params) => {
-      console.log(`rename file ${params[0]} to ${params[1]}`)
+      console.log(`rename file ${params[0]} to ${params[1]}`);
     }
   },
 ];
