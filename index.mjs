@@ -1,6 +1,7 @@
 import os from 'os';
 import readline from 'readline';
-import getArgValue from './utils/getArgValue.mjs';
+import { getArgValue, parseCommand} from './utils/ParseFuncs.mjs';
+import executeCommand from './utils/executeCommand.mjs';
 
 let currentPath = os.homedir();
 const userName = getArgValue(process.argv.slice(2), 'username') || 'Anonymus';
@@ -17,7 +18,8 @@ rl.on('line', (input) => {
   if (input === '.exit') {
     rl.close();
   } else {
-    console.log(`Received: ${input}`);
+    // console.log(`Received: ${parseCommand(input)}`);
+    executeCommand(parseCommand(input));
     console.log(`You are currently in ${currentPath}`);
   }
 });
