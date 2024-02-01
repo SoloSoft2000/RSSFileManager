@@ -3,6 +3,7 @@ import { changePath } from '../handlers/directory.mjs';
 import { list } from '../handlers/list.mjs';
 import { readFile } from '../handlers/readFile.mjs';
 import { removeFile } from '../handlers/removeFile.mjs';
+import { renameFile } from '../handlers/renameFile.mjs';
 
 const commandList = [
   {
@@ -37,7 +38,7 @@ const commandList = [
     command: 'add',
     expectedParams: 1,
     handlerFunction: async ([fileName]) => {
-      await createEmptylsFile(fileName);
+      await createEmptyFile(fileName);
     }
   },
   {
@@ -50,8 +51,8 @@ const commandList = [
   {
     command: 'rn',
     expectedParams: 2,
-    handlerFunction: (params) => {
-      console.log(`rename file ${params[0]} to ${params[1]}`);
+    handlerFunction: async ([pathToFile, newFileName]) => {
+      await renameFile(pathToFile, newFileName);
     }
   },
 ];
