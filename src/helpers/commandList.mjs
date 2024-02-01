@@ -1,5 +1,7 @@
-import { changePath } from "../handlers/directory.mjs";
-import { list } from "../handlers/list.mjs";
+import { changePath } from '../handlers/directory.mjs';
+import { list } from '../handlers/list.mjs';
+import { readFile } from '../handlers/readFile.mjs';
+
 const commandList = [
   {
     command: 'ls',
@@ -25,8 +27,8 @@ const commandList = [
   {
     command: 'cat',
     expectedParams: 1,
-    handlerFunction: (params) => {
-      console.log(`read file ${params[0]}`);
+    handlerFunction: async (params) => {
+      await readFile(params[0]);
     }
   },
   {
