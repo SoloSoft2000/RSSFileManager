@@ -6,6 +6,7 @@ import {
   removeFile,
   renameFile,
   copyFile,
+  moveFile,
 } from '../handlers/index.mjs'
 
 const commandList = [
@@ -63,6 +64,13 @@ const commandList = [
     expectedParams: 2,
     handlerFunction: async ([pathToFile, newPath]) => {
       await copyFile(pathToFile, newPath);
+    }
+  },
+  {
+    command: 'mv',
+    expectedParams: 2,
+    handlerFunction: async ([pathToFile, newPath]) => {
+      await moveFile(pathToFile, newPath);
     }
   },
 ];
