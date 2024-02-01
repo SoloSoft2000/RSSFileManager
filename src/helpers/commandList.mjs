@@ -2,6 +2,7 @@ import { createEmptyFile } from '../handlers/createEmptyFile.mjs';
 import { changePath } from '../handlers/directory.mjs';
 import { list } from '../handlers/list.mjs';
 import { readFile } from '../handlers/readFile.mjs';
+import { removeFile } from '../handlers/removeFile.mjs';
 
 const commandList = [
   {
@@ -37,6 +38,13 @@ const commandList = [
     expectedParams: 1,
     handlerFunction: async ([fileName]) => {
       await createEmptylsFile(fileName);
+    }
+  },
+  {
+    command: 'rm',
+    expectedParams: 1,
+    handlerFunction: async ([fileName]) => {
+      await removeFile(fileName);
     }
   },
   {
