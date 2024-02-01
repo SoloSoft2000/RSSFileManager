@@ -1,9 +1,12 @@
-import { createEmptyFile } from '../handlers/createEmptyFile.mjs';
-import { changePath } from '../handlers/directory.mjs';
-import { list } from '../handlers/list.mjs';
-import { readFile } from '../handlers/readFile.mjs';
-import { removeFile } from '../handlers/removeFile.mjs';
-import { renameFile } from '../handlers/renameFile.mjs';
+import {
+  createEmptyFile, 
+  changePath,
+  list,
+  readFile,
+  removeFile,
+  renameFile,
+  copyFile,
+} from '../handlers/index.mjs'
 
 const commandList = [
   {
@@ -53,6 +56,13 @@ const commandList = [
     expectedParams: 2,
     handlerFunction: async ([pathToFile, newFileName]) => {
       await renameFile(pathToFile, newFileName);
+    }
+  },
+  {
+    command: 'cp',
+    expectedParams: 2,
+    handlerFunction: async ([pathToFile, newPath]) => {
+      await copyFile(pathToFile, newPath);
     }
   },
 ];
