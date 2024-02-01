@@ -15,7 +15,7 @@ const readFile = async (fileForRead) => {
     });
     await pipeline(readStream, writeStream);
   } catch (error) {
-    console.error('Operation failed:', error.message);
+    console.log(error.message);
     throw error;
   }
 };

@@ -1,3 +1,4 @@
+import { createEmptyFile } from '../handlers/createEmptyFile.mjs';
 import { changePath } from '../handlers/directory.mjs';
 import { list } from '../handlers/list.mjs';
 import { readFile } from '../handlers/readFile.mjs';
@@ -20,22 +21,22 @@ const commandList = [
   {
     command: 'cd',
     expectedParams: 1,
-    handlerFunction: (params) => {
-      changePath(params[0]);
+    handlerFunction: ([pathName]) => {
+      changePath(pathName);
     }
   },
   {
     command: 'cat',
     expectedParams: 1,
-    handlerFunction: async (params) => {
-      await readFile(params[0]);
+    handlerFunction: async ([pathToFile]) => {
+      await readFile(pathToFile);
     }
   },
   {
     command: 'add',
     expectedParams: 1,
-    handlerFunction: (params) => {
-      console.log(`create file ${params[0]}`);
+    handlerFunction: async ([fileName]) => {
+      await createEmptylsFile(fileName);
     }
   },
   {
