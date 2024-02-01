@@ -8,23 +8,29 @@ const userName = getArgValue(process.argv.slice(2), 'username') || 'Anonymus';
 changePath(os.homedir());
 
 console.log(`Welcome to the File Manager, ${userName}!`);
-console.log(`You are currently in ${getCurrentPath()}`);
 
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
 
-rl.on('line', async (input) => {
+const question = () => {
+  rl.question(`You are currently in ${getCurrentPath()}\n> `, (answer) => processInput(answer));
+}
+
+const processInput = async (input) => {
+  input = input.trim();
   if (input === '.exit') {
     rl.close();
   } else {
-    await executeCommand(parseCommand(input)).then(() => {
-      console.log(`You are currently in ${getCurrentPath()}`);
-    });
-    
+    await executeCommand(parseCommand(input));
+    question();
   }
-});
+}
+
+rl.on('line', processInput);
+
+question();
 
 rl.on('SIGINT', rl.close);
 

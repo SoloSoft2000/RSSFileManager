@@ -1,24 +1,23 @@
 import path from 'path';
 import fs from 'fs';
+import { Writable } from 'stream';
+import { pipeline } from 'stream/promises';
 
 const readFile = async (fileForRead) => {
-  return new Promise((response, reject) => {
+  try {
     const pathToFile = path.resolve('.', fileForRead);
     const readStream = fs.createReadStream(pathToFile, { encoding: 'utf-8' });
-
-    readStream.on('data', (chunk) => {
-      console.log(chunk);
+    const writeStream = new Writable({
+      write(chunk, _, callback) {
+        console.log(chunk.toString());
+        callback();
+      }
     });
-
-    readStream.on('end', () => {
-      response();
-    });
-
-    readStream.on('error', (error) => {
-      console.log(error.message);
-      reject();
-    });
-  });
+    await pipeline(readStream, writeStream);
+  } catch (error) {
+    console.error('Operation failed:', error.message);
+    throw error;
+  }
 };
 
 export { readFile };
