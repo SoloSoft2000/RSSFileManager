@@ -5,7 +5,7 @@ const osData = (params) => {
     switch (element.toLowerCase()) {
           case '--eol':
             const endOfLine = os.EOL;
-            console.log(`The default system End-Of-Line is: \x1b[42m\x1b[30m\x1b[4m "${endOfLine === '\n' ? '\\n' : '\\r\\n'}" \x1b[0m`);
+            console.log(`The default system End-Of-Line is \x1b[42m\x1b[30m\x1b[4m "${endOfLine === '\n' ? '\\n' : '\\r\\n'}" \x1b[0m`);
             break;
           case '--cpus':
             const cpus = os.cpus(); 
