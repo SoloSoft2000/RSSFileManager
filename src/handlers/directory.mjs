@@ -4,7 +4,12 @@ const getCurrentPath = () => {
 
 const changePath = (newPath) => {
   try {
-    process.chdir(newPath);    
+    if (newPath.slice(-1) === ':') {
+      console.log('To switch to another drive, use the command "cd X:\\"');
+      throw new Error();
+    } else {
+      process.chdir(newPath);
+    }
   } catch (error) {
     console.log('Operation failed')
   }
