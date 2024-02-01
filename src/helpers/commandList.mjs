@@ -7,6 +7,7 @@ import {
   renameFile,
   copyFile,
   moveFile,
+  osData,
 } from '../handlers/index.mjs'
 
 const commandList = [
@@ -73,6 +74,14 @@ const commandList = [
       await moveFile(pathToFile, newPath);
     }
   },
+  {
+    command: 'os',
+    expectedParams: -1,
+    handlerFunction: (params) => {
+      osData(params);
+    }
+  },
+
 ];
 
 export default commandList;

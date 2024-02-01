@@ -6,6 +6,7 @@ import { removeFile } from './removeFile.mjs';
 import { renameFile } from './renameFile.mjs';
 import { copyFile } from './copyFile.mjs';
 import { moveFile } from './moveFile.mjs';
+import { osData } from './osData.mjs';
 
 export {
   createEmptyFile, 
@@ -16,4 +17,5 @@ export {
   renameFile,
   copyFile,
   moveFile,
+  osData,
 };
