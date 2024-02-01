@@ -3,6 +3,10 @@ const getCurrentPath = () => {
 }
 
 const changePath = (newPath) => {
-  process.chdir(newPath);
+  try {
+    process.chdir(newPath);    
+  } catch (error) {
+    console.log('Operation failed')
+  }
 }
 export { getCurrentPath, changePath };

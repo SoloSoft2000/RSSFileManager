@@ -15,12 +15,14 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-rl.on('line', (input) => {
+rl.on('line', async (input) => {
   if (input === '.exit') {
     rl.close();
   } else {
-    executeCommand(parseCommand(input));
-    console.log(`You are currently in ${getCurrentPath()}`);
+    await executeCommand(parseCommand(input)).then(() => {
+      console.log(`You are currently in ${getCurrentPath()}`);
+    });
+    
   }
 });
 

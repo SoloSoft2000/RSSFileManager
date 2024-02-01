@@ -1,9 +1,9 @@
 import commandList from "./commandList.mjs";
-const executeCommand = ([command, ...params]) => {
+const executeCommand = async ([command, ...params]) => {
   const commandToExecute = commandList.find((item) => command === item.command);
   if (commandToExecute && commandToExecute.expectedParams === params.length) {
     try {
-      commandToExecute.handlerFunction(params);  
+      await commandToExecute.handlerFunction(params);  
     } catch (error) {
       console.log('Operation failed');
     }

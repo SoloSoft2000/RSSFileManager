@@ -4,8 +4,8 @@ const commandList = [
   {
     command: 'ls',
     expectedParams: 0,
-    handlerFunction: () => {
-      list();
+    handlerFunction: async () => {
+      await list();
     }
   },
   {
