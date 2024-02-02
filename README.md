@@ -6,4 +6,7 @@ This application provides a set of operations for navigating directories, workin
 
 ### Navigation & Working Directory (nwd)
 
-up - **Go Upper from Current Directory:**
+**up** - *Go Upper from Current Directory:*
+
+**cd `path_to_directory`** - *Go to dedicated folder from current directory*
+    For change drive on Windows OS must use `cd X:\`
