@@ -7,6 +7,7 @@ import { renameFile } from './renameFile.mjs';
 import { copyFile } from './copyFile.mjs';
 import { moveFile } from './moveFile.mjs';
 import { osData } from './osData.mjs';
+import { hash } from './hash.mjs'
 
 export {
   createEmptyFile, 
@@ -18,4 +19,5 @@ export {
   copyFile,
   moveFile,
   osData,
+  hash,
 };

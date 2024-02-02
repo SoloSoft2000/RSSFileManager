@@ -8,6 +8,7 @@ import {
   copyFile,
   moveFile,
   osData,
+  hash
 } from '../handlers/index.mjs'
 
 const commandList = [
@@ -37,6 +38,13 @@ const commandList = [
     expectedParams: 1,
     handlerFunction: async ([pathToFile]) => {
       await readFile(pathToFile);
+    }
+  },
+  {
+    command: 'hash',
+    expectedParams: 1,
+    handlerFunction: async ([pathToFile]) => {
+      await hash(pathToFile);
     }
   },
   {
