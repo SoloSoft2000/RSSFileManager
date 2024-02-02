@@ -9,4 +9,34 @@ This application provides a set of operations for navigating directories, workin
 **up** - *Go Upper from Current Directory:*
 
 **cd `path_to_directory`** - *Go to dedicated folder from current directory*
-    For change drive on Windows OS must use `cd X:\`
+*For change drive on Windows OS must use `cd X:\`*
+
+**ls** - *Print in console list of all files and folders in current directory*
+
+---
+### Operations with files
+
+**cat `path_to_file`** - *Read file and print it's content in console*
+
+**add`new_file_name`** - *Create empty file (`new_file_name` may content path`)*
+
+**rm `path_to_file`** - *Delete file*
+
+**rn `path_to_file` `new_filename`** - *Rename file (`new_file_name` may content path`)*
+
+**cp `path_to_file` `path_to_new_directory`** - *Copy file*
+
+**mv `path_to_file` `path_to_new_directory`** - *Move file*
+
+---
+### Operating system info
+
+**os `parametres`** - *prints information in console*
+
+- `--EOL` - *Get EOL (default system End-Of-Line)*
+- `--cpus` - *Get host machine CPUs info*
+- `--homedir` - *Get home directory*
+- `--username` - *Get current system user name*
+- `--architecture` - *Get CPU architecture*
+
+---
