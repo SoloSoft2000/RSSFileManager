@@ -5,7 +5,7 @@ const executeCommand = async ([command, ...params]) => {
     if ((commandToExecute.expectedParams === -1 && params.length > 0) ||
       (commandToExecute.expectedParams !== -1 && commandToExecute.expectedParams === params.length)) {
       try {
-        await commandToExecute.handlerFunction(params);  
+        await commandToExecute.handlerFunction(params);
       } catch (error) {
         console.log('Operation failed');
       }
@@ -15,7 +15,7 @@ const executeCommand = async ([command, ...params]) => {
   } else {
     console.log('Invalid input');
   }
-   
+
   return;
 }
 

@@ -1,5 +1,5 @@
 import {
-  createEmptyFile, 
+  createEmptyFile,
   changePath,
   list,
   readFile,
