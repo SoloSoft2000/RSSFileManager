@@ -5,13 +5,9 @@
   "type": "module",
   "scripts": {
     "start": "node src/index.mjs",
-    "start:user": "node src/index.mjs --username=Eugene",
-    "nodemon": "nodemon src/index.mjs --username=Eugene"
+    "start:user": "node src/index.mjs --username=Eugene"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "nodemon": "^3.0.3"
-  }
+  "license": "ISC"
 }

@@ -8,6 +8,7 @@ import { copyFile } from './copyFile.mjs';
 import { moveFile } from './moveFile.mjs';
 import { osData } from './osData.mjs';
 import { hash } from './hash.mjs'
+import { compressDecompress } from './compress.mjs';
 
 export {
   createEmptyFile, 
@@ -20,4 +21,5 @@ export {
   moveFile,
   osData,
   hash,
+  compressDecompress
 };

@@ -26,9 +26,10 @@ const processInput = async (input) => {
     await executeCommand(parseCommand(input));
     question();
   }
+
 }
 
-rl.on('line', processInput);
+// rl.on('line', processInput);
 
 question();
 

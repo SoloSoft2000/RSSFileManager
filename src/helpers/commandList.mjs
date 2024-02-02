@@ -8,7 +8,8 @@ import {
   copyFile,
   moveFile,
   osData,
-  hash
+  hash,
+  compressDecompress
 } from '../handlers/index.mjs'
 
 const commandList = [
@@ -73,6 +74,20 @@ const commandList = [
     expectedParams: 2,
     handlerFunction: async ([pathToFile, newPath]) => {
       await copyFile(pathToFile, newPath);
+    }
+  },
+  {
+    command: 'compress',
+    expectedParams: -1,
+    handlerFunction: async ([pathToFile, newPath]) => {
+      await compressDecompress('compress', pathToFile, newPath);
+    }
+  },
+  {
+    command: 'decompress',
+    expectedParams: -1,
+    handlerFunction: async ([pathToFile, newPath]) => {
+      await compressDecompress('decompress', pathToFile, newPath);
     }
   },
   {
