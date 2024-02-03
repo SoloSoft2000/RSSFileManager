@@ -9,7 +9,7 @@ This application provides a set of operations for navigating directories, workin
 **up** - *Go Upper from Current Directory:*
 
 **cd `path_to_directory`** - *Go to dedicated folder from current directory*
-*For change drive on Windows OS must use `cd X:\`*
+*For change drive on Windows OS must use `cd X:\` or `cd X:\path` where `X` - drive name*
 
 **ls** - *Print in console list of all files and folders in current directory*
 
