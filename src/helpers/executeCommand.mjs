@@ -1,4 +1,5 @@
 import commandList from "./commandList.mjs";
+
 const executeCommand = async ([command, ...params]) => {
   const commandToExecute = commandList.find((item) => command.toLowerCase() === item.command);
   if (commandToExecute) {

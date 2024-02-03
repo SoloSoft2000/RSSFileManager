@@ -104,7 +104,6 @@ const commandList = [
       osData(params);
     }
   },
-
 ];
 
 export default commandList;

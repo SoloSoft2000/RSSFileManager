@@ -28,4 +28,5 @@ const osData = (params) => {
     }
   });
 }
+
 export { osData };

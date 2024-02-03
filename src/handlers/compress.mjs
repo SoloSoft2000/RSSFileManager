@@ -19,7 +19,6 @@ const compressDecompress = async (actionFlag, mainPathToFile, newPath) => {
     console.log(error.message);
     throw error;
   }
-
 };
 
 export { compressDecompress };
