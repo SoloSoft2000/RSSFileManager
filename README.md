@@ -31,7 +31,7 @@ This application provides a set of operations for navigating directories, workin
 ---
 ### Operating system info
 
-**os `parametres`** - *prints information in console*
+**os `parametres`** - *prints information in console, multiple parameters is allowed, for example `os --homedir --username`*
 
 - `--EOL` - *Get EOL (default system End-Of-Line)*
 - `--cpus` - *Get host machine CPUs info*
@@ -40,3 +40,10 @@ This application provides a set of operations for navigating directories, workin
 - `--architecture` - *Get CPU architecture*
 
 ---
+### Hash calculations and compress and decompress operations
+
+**hash `path_to_file`** - *Calculate hash for file*
+
+**compress `path_to_file` `path_to_destination`** - *Compress file (using Brotli algorithm). The new file will have the extension `.br`. If `path_to_destination` is not specified, the result will be saved in the current path `(./)`*
+
+**decompress `path_to_file` `path_to_destination`** - *Decompress file (using Brotli algorithm). If `path_to_destination` is not specified, the result will be saved in the current path `(./)`*
