@@ -4,6 +4,9 @@ This application provides a set of operations for navigating directories, workin
 
 ## List of Operations and Syntax
 
+**If the path or file name contains spaces, then you need to use double quotes.**
+ *For example: `add "c:\test folder\test file.txt"`*
+ 
 ### Navigation & Working Directory (nwd)
 
 **up** - *Go Upper from Current Directory:*
@@ -18,7 +21,7 @@ This application provides a set of operations for navigating directories, workin
 
 **cat `path_to_file`** - *Read file and print it's content in console*
 
-**add`new_file_name`** - *Create empty file (`new_file_name` may content path`)*
+**add `new_file_name`** - *Create empty file (`new_file_name` may content path`)*
 
 **rm `path_to_file`** - *Delete file*
 
